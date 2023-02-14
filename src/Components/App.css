@@ -1,0 +1,66 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  /* border: yellow solid 2px; */
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* Play Ares CSS ///////////////////*/
+.playArea {
+  /* border: red solid 2px; */
+  height: 80%;
+  width: 80%;
+}
+
+/* CARD COMPONENT CSS ///////////////////*/
+
+.card {
+  border: solid black 2px;
+  font-size: 16px;
+  height: 70%;
+  width: 100%;
+  margin: 0.5%;
+}
+
+/* Grid COMPONENT CSS ///////////////////*/
+.grid {
+  border: yellow solid 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  /* width: 100vw; */
+}
+
+/* Row COMPONENT CSS ///////////////////*/
+
+.row {
+  /* border: purple 2px solid; */
+  /* display: flex; */
+  /* justify-content: center; */
+  height: 70%;
+  /* flex-wrap: wrap;  */
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(5, 40%);
+  grid-template-rows: repeat(5, 50%);
+  gap: 20px;
+}
