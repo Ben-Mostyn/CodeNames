@@ -26,7 +26,7 @@ const Card = ({ gameArray }: MyProps): any => {
       console.log(newArray, "this is new array /////");
     }
   }
-
+  //testing
   const removeElementsFromArray = (): void => {
     gameArray.slice(value, 1);
   };
