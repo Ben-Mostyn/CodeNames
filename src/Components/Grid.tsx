@@ -1,6 +1,5 @@
 import { ReactElement } from "react";
 import Card from "./Card";
-import Row from "./Row";
 
 interface MyProps {
   gameArray: string[];
