@@ -22,19 +22,14 @@ const App = (): ReactElement => {
   >(null);
 
   //False = team 1, true = team 2
-  const [teamChange, setTeamChange] = useState<boolean>(false);
+  const [teamChange, setTeamChange] = useState(false);
 
   //!Functions
 
-  const populateGameArray = (e: any): any => {
+  const populateGameArray = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     setGameArray(Arrays.numbers);
   };
-
-  // Console.log can be deleted when working
-  // if (gameArray.length > 0) {
-  //   console.log(gameArray);
-  // }
 
   return (
     <div className="App">

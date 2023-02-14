@@ -18,9 +18,6 @@ const Card = ({ gameArray }: MyProps): any => {
   // While newArray.length is less than 24, a random number is generated
   while (newArray.length < 25) {
     value = Math.floor(Math.random() * gameArray.length);
-
-    // If this random number isnt in selectedIndices it is pushed to the array
-    // And so is the corresponding value in gameArray
     if (!selectedIndices.includes(value)) {
       selectedIndices.push(value);
       newArray.push(gameArray[value]);
@@ -30,7 +27,7 @@ const Card = ({ gameArray }: MyProps): any => {
     }
   }
 
-  const removeElementsFromArray = (): any => {
+  const removeElementsFromArray = (): void => {
     gameArray.slice(value, 1);
   };
 
