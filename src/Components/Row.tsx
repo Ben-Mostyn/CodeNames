@@ -2,14 +2,17 @@ import { ReactElement } from "react";
 import Card from "./Card";
 import Arrays from "./WordsArrays";
 
-const Row = (): ReactElement => {
+interface MyProps {
+  gameArray: string[];
+}
+
+const Row = ({ gameArray }: MyProps): ReactElement => {
   return (
     <div className="row">
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {/* <Card gameArray={gameArray} />
+      <Card gameArray={gameArray} />
+      <Card gameArray={gameArray} />
+      <Card gameArray={gameArray} /> */}
     </div>
   );
 };
