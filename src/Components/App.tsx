@@ -1,7 +1,7 @@
-import { FC, ReactElement, useState } from "react";
+import { FC, ReactElement, SetStateAction, useEffect, useState } from "react";
 import "./App.css";
 import Grid from "./Grid";
-import Arrays from "./WordsArrays";
+import {numbers, letters, sampleWords} from "./WordsArrays";
 
 const App = (): ReactElement => {
   //!states
@@ -26,21 +26,54 @@ const App = (): ReactElement => {
 
   //!Functions
 
-  const populateGameArray = (e: any): any => {
-    e.preventDefault();
-    setGameArray(Arrays.numbers);
+
+  const [selectedOption, setSelectedOption] = useState("option1");
+  const options = [
+    { value: "option1", label: "Option 1" },
+    { value: "option2", label: "Option 2" },
+    { value: "option3", label: "Option 3" },
+  ];
+  const arrays: any = {
+    option1: numbers,
+    option2: letters,
+    option3: sampleWords,
   };
 
-  // Console.log can be deleted when working
-  // if (gameArray.length > 0) {
-  //   console.log(gameArray);
-  // }
+  // Get the selected array based on the selected option
+  let selectedArray: any = arrays[selectedOption];
+
+  // Handle the dropdown selection change
+  
+  const handleChange = (event: { target: { value: SetStateAction<string>; }; }) => {
+    setSelectedOption(event.target.value);
+  };
+
+
+// populate the array used for the game
+
+  const populateGameArray = (e: any): any => {
+    e.preventDefault();
+    setGameArray(selectedArray);
+  };
+
+
+
+
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>CodeNames</h1>
       </header>
+      <select value={selectedOption} defaultValue="option1" onChange={handleChange} >
+
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+
+      </select>
       <section className="playArea">
         <button onClick={populateGameArray}>Start Game</button>
         {gameArray.length < 1 ? null : <Grid gameArray={gameArray} />}
