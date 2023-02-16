@@ -1,5 +1,3 @@
-import { ReactElement, useState } from "react";
-import Arrays from "./WordsArrays";
 
 interface MyProps {
   gameArray: string[];

@@ -1,6 +1,7 @@
 import { ReactElement, SetStateAction, useState } from "react";
 import "./App.css";
 import Grid from "./Grid";
+import GameStates from "./SecretCard";
 import {numbers, letters, sampleWords} from "./WordsArrays";
 
 const App = (): ReactElement => {
@@ -23,6 +24,9 @@ const App = (): ReactElement => {
 
   //False = team 1, true = team 2
   const [teamChange, setTeamChange] = useState<boolean>(false);
+
+  //False = blue team goes first 
+  const [firstTurn, setFirstTurn] = useState<boolean | null >(false);
 
   //!Functions
 
@@ -56,14 +60,21 @@ const App = (): ReactElement => {
     setGameArray(selectedArray);
   };
 
-
-
+function h1ColorChange(){
+  if (firstTurn) {
+    setFirstTurn(false)
+  }
+  else
+  {
+    setFirstTurn(true)
+  }
+}
 
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1>CodeNames</h1>
+        {firstTurn ? <h1 className="red">CodeNames</h1>: <h1 className="blue">CodeNames</h1>}
       </header>
       <select value={selectedOption} defaultValue="option1" onChange={handleChange} >
 
@@ -77,6 +88,7 @@ const App = (): ReactElement => {
       <section className="playArea">
         <button onClick={populateGameArray}>Start Game</button>
         {gameArray.length < 1 ? null : <Grid gameArray={gameArray} />}
+        <button onClick={() => {GameStates(); h1ColorChange();}}>Test</button>
       </section>
     </div>
   );

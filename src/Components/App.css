@@ -65,3 +65,11 @@
   grid-template-rows: repeat(5, 50%);
   gap: 20px;
 }
+
+.red{
+  color: red;
+}
+
+.blue{
+  color: blue;
+}
