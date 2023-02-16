@@ -1,4 +1,4 @@
-import { FC, ReactElement, SetStateAction, useEffect, useState } from "react";
+import { ReactElement, SetStateAction, useState } from "react";
 import "./App.css";
 import Grid from "./Grid";
 import {numbers, letters, sampleWords} from "./WordsArrays";
