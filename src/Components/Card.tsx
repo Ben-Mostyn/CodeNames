@@ -1,4 +1,3 @@
-
 interface MyProps {
   gameArray: string[];
 }
@@ -13,7 +12,7 @@ const Card = ({ gameArray }: MyProps): any => {
   let newArray: string[] = [];
   const selectedIndices: number[] = [];
 
-  // While newArray.length is less than 24, a random number is generated
+  //While newArray.length is less than 24, a random number is generated
   while (newArray.length < 25) {
     value = Math.floor(Math.random() * gameArray.length);
 
